@@ -1,4 +1,14 @@
 # $d=3 \quad X-$ memory rotated surface code 
 This repo implements Rust code to simulate the experiments for the $d=3$ rotated surface code with $X-$ memory checks from this [paper by Evangelia Takou et al.](https://arxiv.org/abs/2510.23797). The algorithm in this code is shared by the paper's author through private correspondence with Shah Saad Alam. I (Shah) implemented it both as an exercise to better understand the paper for a journal club, understand coherent errors in DEMs as well as learn how to use Claude better 🤖
 
-For my journal club talk on this paper, see recordings under Architecture Journal Club schedule
+For my journal club talk on this paper, see recordings under Architecture Journal Club schedule.
+
+### Building the repo and simulating circuit with coherent errors
+
+- Install Rust and Cargo using `rustup`
+- Within the directory, run `cargo run --release`
+
+This should generate the `x_ancilla_probs.csv` file.
+
+### Building the DEM
+Use the notebook `building the DEM.ipynb` to read the `x_ancilla_probs.csv` file.
