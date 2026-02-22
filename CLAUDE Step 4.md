@@ -5,7 +5,7 @@ In Step 3, we prepared a logical state $\ket{+}_L$ , normalized it, and then app
 ### Writing "anti-projection" operator
 Back in Step 2, we defined a function `pub fn projection_operator(s: &Mat<c64>) -> Mat<c64>` that takes in a stabilizer $S$ and returns the projection $P = \frac{ \mathbb{I} + S}{2}$. $P$ projects a state into the +1 eigenstate of $S$.
 
-I added a `pub fn anti_projection_operator(s: &Mat<c64>) -> Mat<c64>` that takes in a stabilizer $S$ and returns the antiprojection $Q = \frac{ \mathbb{I} + S}{2}$. $Q$ projects a state into the -1 eigenstate of $S$.
+I added a `pub fn anti_projection_operator(s: &Mat<c64>) -> Mat<c64>` that takes in a stabilizer $S$ and returns the antiprojection $Q = \frac{ \mathbb{I} - S}{2}$. $Q$ projects a state into the -1 eigenstate of $S$.
 
 Write tests for this function similar to how you wrote tests for projection operators
 

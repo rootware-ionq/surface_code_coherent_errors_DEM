@@ -1,6 +1,6 @@
 ## Mandatory Instructions
 
-1. For each function you define, and check with me before editing file.
+1. For each function you define, check with me before editing file.
 2. For each function you define, write a test, and check with me before editing file.
 3. When in doubt, ask me for clarification.
 4. Go as step by step as possible.
