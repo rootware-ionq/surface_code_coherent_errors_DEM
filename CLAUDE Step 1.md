@@ -21,7 +21,7 @@ We first define functions relevant to state initialization.
 		`fn get_initial_state( n_qubits: usize) -> Mat<c64>`
 
 We now work towards defining the stabilizer operators for the $d=3$ rotated surface code. The $d=3$ rotated surface code has 9 data qubits only.  We label the qubits from 0 to 8, then
-1. First, we define the Pauli matrices $X$,$Y$,$Z$ for 1 qubit. Each of these should be `Mat<c64>`
+1. First, we define the Pauli matrices $X$,$`Y`$,$`Z`$ for 1 qubit. Each of these should be `Mat<c64>`
 2. An $X$ stabilizer is defined as a product of the Pauli $X$'s operating on a set of qubits, and an identity on all the remaining ones. For example, a $X$ stabilizer could be $X_{stab} = I_0 X_1X_2I_3X_4X_5 I_6I_7I_8$. To simplify, we can write this stabilizer by recording only the qubits where we operate an $X$ , e.g. $X_{stab} \to (1,2,4,5)$ .
 3. A $Z$ stabilizer is defined as a product of the Pauli $Z$'s operating on a set of qubits, and an identity on all the remaining ones. For example, a $Z$ stabilizer could be $Z_{stab} = I_0 I_1Z_2I_3I_4Z_5 I_6I_7I_8$. To simplify, we can write this stabilizer by recording only the qubits where we operate an $Z$ , e.g. $Z_{stab} \to (2,5)$ .
 4. We then define `Vec<Vec<usize>>` vectors that contain the indices for  the qubits participating in the $X$ and $Z$ stabilizers in the $d=3$ rotated surface code.

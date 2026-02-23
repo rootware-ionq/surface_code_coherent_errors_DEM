@@ -6,7 +6,7 @@ We now write a function to take in a stabilizer $S$(can be $X$ or $Z$ stabilizer
 
 We now generate projection operators for all the possible $X$ and $Z$ stabilizers, and then multiply them sequentially onto the initial state. We then record this new state as our `logical_plus_state` . Mathematically, we are making this new state $\ket{+}_L$ by
 
-$\ket{+}_L = \left(\prod_{S\in stabilizers} \frac{\mathbb{I}+S}{2} \right)\ket{\psi_0}$
+$$\ket{+}_L = \left(\prod_{S\in stabilizers} \frac{\mathbb{I}+S}{2} \right)\ket{\psi_0}$$
 
 where $\ket{\psi_0}$ is the state returned by the `get_initial_state()` function for `n_qubits=9`
 
