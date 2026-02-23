@@ -27,4 +27,4 @@ We now work towards defining the stabilizer operators for the $d=3$ rotated surf
 4. We then define `Vec<Vec<usize>>` vectors that contain the indices for  the qubits participating in the $X$ and $Z$ stabilizers in the $d=3$ rotated surface code.
 	1. The $X$ stabilizers  operate on sets from the following list of qubits : $((0,1), (1,2,4,5), (3,4,6,7), (7,8))$. We can write this as a `Vec<Vec<usize>>`
 	2. The $Z$ stabilizers operate on sets from the following list of qubits: $((0,1,3,4), (2,5), (3,6), (4,5,7,8))$. We can write this as a `Vec<Vec<usize>>`
-5. Construct the matrix representation of the $X$ stabilizers and the $Z$ stabilizers by Kroneck producting the identity $I$ ,$X$, and $Z$ for each stabilizer, using the indices we recorded in `Vec<Vec<usize>>`
+5. Construct the matrix representation of the $X$ stabilizers and the $Z$ stabilizers by Kroneck producting the identity $`I`$ ,$`X`$, and $`Z`$ for each stabilizer, using the indices we recorded in `Vec<Vec<usize>>`
