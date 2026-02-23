@@ -16,7 +16,8 @@ $$\begin{align}
 \end{align}
 $$
 
-Now we use the fact that $\Pi_\pm$ tells us whether $Z_1Z_2=\pm 1$
+Now we use the fact that $\Pi_\pm$ tells us whether $`Z_1Z_2=\pm 1`$
+
 $$\begin{align}
 \rho = &\left[\cos(\theta_1\pm\theta_2)-i(Z_1\sin\theta_1\cos\theta_2+Z_2\sin\theta_2\cos\theta_1)\right]\Pi_\pm\rho_L\Pi_\pm\\ &\left[\cos(\theta_1\pm\theta_2)+i(Z_1\sin\theta_1\cos\theta_2+Z_2\sin\theta_2\cos\theta_1)\right]
 \end{align}
