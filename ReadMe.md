@@ -3,12 +3,18 @@ This repo implements Rust code to simulate the experiments for the $d=3$ rotated
 
 **Acknowledgements**: Massive thanks to the author E. Takou for explaining their paper to me. This code is more of a learning exercise I did based on conversations with the author.
 
-### Building the repo and simulating circuit with coherent errors
+### `[Rust]` : Building the repo and simulating circuit with coherent errors
 
 - Install Rust and Cargo using `rustup`
 - Within the directory, run `cargo run --release`
+- The Rust source code is within the `/src/` folder, with tests in `/tests/`.
 
 This should generate the `x_ancilla_probs.csv` file.
+
+### `[Python]` : Building the repo and simulating circuit with coherent errors
+
+- Have a Python environment with `Numpy` and `pytest` installed.
+- All Python code and tests are under `/python/` folder.
 
 ### Building the DEM
 
