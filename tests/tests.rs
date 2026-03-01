@@ -377,5 +377,5 @@ fn test_perform_x_ancilla_checks() {
     );
 
     // Call the actual function to exercise the file-writing path.
-    perform_x_ancilla_checks(&state);
+    perform_x_ancilla_checks(&state, None);
 }
