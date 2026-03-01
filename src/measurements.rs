@@ -26,7 +26,7 @@ use crate::stabilizers::{anti_projection_operator, build_x_stabilizers, projecti
 /// a0,a1,a2,a3,probability
 /// ```
 /// Readable in Python via `np.loadtxt("x_ancilla_probs.csv", delimiter=",")`.
-pub fn perform_x_ancilla_checks(state: &Mat<c64>) {
+pub fn perform_x_ancilla_checks(state: &Mat<c64>, filename: Option<&str>) {
     let x_stabs = build_x_stabilizers();
 
     // Pre-build all projectors and anti-projectors for the 4 X stabilizers.
@@ -35,8 +35,8 @@ pub fn perform_x_ancilla_checks(state: &Mat<c64>) {
         .map(|s| (projection_operator(s), anti_projection_operator(s)))
         .collect();
 
-    let n_ancilla = projectors.len();           // 4
-    let n_patterns = 1usize << n_ancilla;       // 16
+    let n_ancilla = projectors.len(); // 4
+    let n_patterns = 1usize << n_ancilla; // 16
 
     let mut results: Vec<([u8; 4], f64)> = Vec::with_capacity(n_patterns);
 
@@ -47,7 +47,11 @@ pub fn perform_x_ancilla_checks(state: &Mat<c64>) {
         // Apply O = O0·O1·O2·O3 sequentially to |φ⟩.
         let mut w = state.clone();
         for (i, (p, q)) in projectors.iter().enumerate() {
-            let op = if ancilla[i] == 0 { p.as_ref() } else { q.as_ref() };
+            let op = if ancilla[i] == 0 {
+                p.as_ref()
+            } else {
+                q.as_ref()
+            };
             w = op * w.as_ref();
         }
 
@@ -64,7 +68,12 @@ pub fn perform_x_ancilla_checks(state: &Mat<c64>) {
     }
 
     // Write CSV: a0,a1,a2,a3,probability
-    let file = File::create("x_ancilla_probs.csv").expect("could not create x_ancilla_probs.csv");
+    let file;
+    if let Some(file_path) = filename {
+        file = File::create(file_path).expect("could not create x_ancilla_probs.csv");
+    } else {
+        file = File::create("x_ancilla_probs.csv").expect("could not create x_ancilla_probs.csv");
+    }
     let mut writer = BufWriter::new(file);
     for (ancilla, prob) in &results {
         writeln!(
