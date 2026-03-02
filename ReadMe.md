@@ -22,5 +22,8 @@ The Python code for the surface code was translated from Rust to Python using Cl
 
 Use the notebook in `analysis notebooks/First step : building the DEM.ipynb` as an entry point. This notebook I wrote reads the `x_ancilla_probs.csv` file, and builds the DEM by inferring the probabilities $p_{ij}$. The notebook also translates these probabilities into a effective coherent angle $`\tilde{\theta}_{ij}`$ using $`p_{ij}=\sin^2 \tilde{\theta}_{ij}`$. Note that for the example `main.rs` and `.csv` provided in this repo, $\theta=0.1\pi$ for the coherent errors, so we expect most $`\theta_{ij}`$ to be equal to $\theta$, except for the weight 4 checks where 2 data qubits contribute to one DEM edge. For those, we expect $`\theta_{ij} = 2\theta`$.
 
+### Comparison to Repetition Code
+I also wrote a simulation for the $`X-`$ memory repetition code (Fig 1a of Takou et.al paper) in `dem_repetition.ipynb`. In this notebook, I do an actual circuit simulation by building a `cirq` circuit with data and ancilla qubits and using the results to construct the DEM.
+
 ### Math Notes
 For some math and derivations I did on why, see `Math Notes.md`.
