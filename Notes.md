@@ -1,3 +1,6 @@
+## Derivations by Shah
+This document contains derivations I did on when, depending on initial state, I should expect coherent errors to add constructively or destructively in a way that a detector error model that pick up on. We find that even when coherent errors are overrotated in the same direction for all data qubits, the coherent errors can cancel out in ancilla measurements for boundary DEM edges where two data qubits contribute to the same DEM edge _if_ the initial state is in the -1 eigenspace of the $Z$ stabilizer for these two data qubits.
+
 #### Abstract in words
 The paper claims that if I have a weight-4 $X$ check, there will be a case where two data qubits contribute to the same boundary spacelike DEM edge for this weight 4 check, and there I'll see an addition of angles of the coherent errors. 
 These two data qubits are also going to be connected by a weight 2 $Z$ stabilizer check. If during the $\ket{+}_L$  state, I measured $Z_1Z_2$ for these qubits to be +1, then I can prove that the angles add. If $Z_1Z_2=-1$ during the initial state prep syndrome cycle, and I dont correct this before moving on to the next syndrome cycle where I inject noise, the coherent errors cancel out completely.
